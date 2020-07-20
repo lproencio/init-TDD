@@ -1,0 +1,6 @@
+.header {
+  @apply bg-black w-3/4;
+  p {
+    color: white;
+  }
+}
