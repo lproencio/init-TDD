@@ -6,6 +6,14 @@
 
 <script>
 export default {
-  name: "Header"
+  name: "Header",
+  data() {
+    return {
+      notice: {},
+      id: Number,
+      description: String,
+      relevance: Number
+    }
+  },
 };
 </script>
