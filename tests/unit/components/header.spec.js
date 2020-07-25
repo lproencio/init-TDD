@@ -2,7 +2,6 @@ import { shallowMount } from "@vue/test-utils";
 import Header from "@/components/Header.vue";
 const wrapper = shallowMount(Header, {
   propsData: {
-    notice: {},
     id: Number,
     description: String,
     relevance: Number
@@ -15,7 +14,30 @@ describe("Header", () => {
   });
 
   it("notice data exist", () => {
-    expect(wrapper.props("notice")).toBe({id:Number, description: String, relevance:Number});
+    const { id, description, relevance } = wrapper.vm.$data;
+    expect(id).toBe(Number);
+    expect(description).toBe(String);
+    expect(relevance).toBe(Number);
+  });
+
+  it("submit notice", () => {
+    const btnSubmit = wrapper.find("button");
+    setData(wrapper);
+    wrapper.vm.submit();
+
+    const data = wrapper.emitted("emit-notice")
+  
+    expect(btnSubmit.classes()).toContain("btn-submit");
+    expect(...data).toEqual([{
+      id: 1,
+      description: "You is the big monster",
+      relevance: 3
+    }])
   });
   
+  const setData = wrapper =>  wrapper.setData({
+    id: 1,
+    description: "You is the big monster",
+    relevance: 3
+  })
 });
