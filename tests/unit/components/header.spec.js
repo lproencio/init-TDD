@@ -30,14 +30,14 @@ describe("Header", () => {
     expect(btnSubmit.classes()).toContain("btn-submit");
     expect(...data).toEqual([{
       id: 1,
-      description: "You is the big monster",
+      description: "You are the beast",
       relevance: 3
     }])
   });
   
   const setData = wrapper =>  wrapper.setData({
     id: 1,
-    description: "You is the big monster",
+    description: "You are the beast",
     relevance: 3
   })
 });
