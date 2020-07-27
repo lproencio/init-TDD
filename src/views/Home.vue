@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <Header />
+    <Header @emit-notice="transmitNotice" />
     <List />
   </div>
 </template>
@@ -13,6 +13,16 @@ export default {
   components: {
     Header,
     List
+  },
+  data() {
+    return {
+      notice: Array  
+    }
+  },
+  methods: {
+    transmitNotice(newNotice) {
+      this.notice = newNotice;
+    }
   }
 };
 </script>
