@@ -32,8 +32,16 @@ export default {
         description: this.description,
         relevance: this.relevance,
       }
-      this.$emit("emit-notice", notice)
+      this.$emit("emit-notice", notice);
     }
+  },
+  mounted() {
+    const initNotice = {
+      id: 1,
+      description: "You are the beast",
+      relevance: 3
+    }
+    this.$emit("emit-notice", initNotice);
   }
 };
 </script>

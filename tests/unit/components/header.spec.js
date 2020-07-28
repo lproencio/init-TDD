@@ -28,14 +28,14 @@ describe("Header", () => {
     const data = wrapper.emitted("emit-notice")
   
     expect(btnSubmit.classes()).toContain("btn-submit");
-    expect(...data).toEqual([{
+    expect(...data[0]).toEqual({
       id: 1,
       description: "You are the beast",
       relevance: 3
-    }])
+    });
   });
   
-  const setData = wrapper =>  wrapper.setData({
+  const setData = wrapper => wrapper.setData({
     id: 1,
     description: "You are the beast",
     relevance: 3

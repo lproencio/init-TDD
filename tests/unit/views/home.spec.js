@@ -12,7 +12,9 @@ describe("Home", () => {
 
   it("Component exist List", () => {
     const list = wrapper.findComponent(List);
-    expect(list.exists()).toBe(true);
+    afterAll(()=> {
+      expect(list.exists()).toBe(true);
+    });
   });
 
   it("exist data", () => {

@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <Header @emit-notice="transmitNotice" />
-    <List />
+    <List :noticeList="notice" v-if="showList"/>
   </div>
 </template>
 
@@ -16,12 +16,14 @@ export default {
   },
   data() {
     return {
-      notice: Array  
+      notice: Array,
+      showList: false
     }
   },
   methods: {
     transmitNotice(newNotice) {
       this.notice = newNotice;
+      this.showList = true;
     }
   }
 };
