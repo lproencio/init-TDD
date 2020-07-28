@@ -1,5 +1,5 @@
 <template>
-  <div id="home">
+  <div class="home">
     <Header @emit-notice="transmitNotice" />
     <List />
   </div>

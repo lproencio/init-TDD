@@ -5,3 +5,4 @@
 @tailwind utilities;
 
 @import "./components/header.css";
+@import "./components/home.css";

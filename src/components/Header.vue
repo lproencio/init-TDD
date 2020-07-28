@@ -1,6 +1,16 @@
 <template>
   <div class="header">
-    <p>header</p>
+    <h1>header</h1>
+    <div class="input">
+      <div class="input-notice">
+        <label for="">description:</label>
+        <input type="text" />
+      </div>
+      <div class="input-notice">
+        <label for="">relevance:</label>
+        <input type="text" />
+      </div>
+    </div>
     <button class="btn-submit" @click="submit">submit</button>
   </div>
 </template>

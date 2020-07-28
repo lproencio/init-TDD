@@ -1,6 +1,27 @@
 .header {
-  @apply bg-black w-3/4;
-  p {
-    color: white;
+  @apply bg-black w-full p-5;
+  
+  h1 {
+    @apply text-2xl text-white;
+  }
+  
+  .input {
+    @apply flex justify-between;
+
+    .input-notice {
+      @apply w-full pr-10;
+
+      label {
+        @apply text-white text-lg mr-4;
+      }
+
+      input {
+        @apply w-full mt-2 bg-transparent border-b-2 outline-none text-white;
+      }
+    }
+  }
+
+  .btn-submit {
+    @apply bg-blue-500 w-24 h-10 text-white font-bold mt-5 rounded outline-none;
   }
 }
