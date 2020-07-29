@@ -1,12 +1,7 @@
 import { shallowMount } from "@vue/test-utils";
 import Header from "@/components/Header.vue";
-const wrapper = shallowMount(Header, {
-  propsData: {
-    id: Number,
-    description: String,
-    relevance: Number
-  }
-});
+const wrapper = shallowMount(Header);
+const { id, description, relevance, isEmpty } = wrapper.vm.$data;
 
 describe("Header", () => {
   it("Component is mounted", () => {
@@ -14,18 +9,20 @@ describe("Header", () => {
   });
 
   it("notice data exist", () => {
-    const { id, description, relevance } = wrapper.vm.$data;
-    expect(id).toBe(Number);
-    expect(description).toBe(String);
-    expect(relevance).toBe(Number);
+    expect(id).toBe(1);
+    expect(description).toBe("");
+    expect(relevance).toBe(null);
   });
 
   it("submit notice", () => {
-    const btnSubmit = wrapper.find("button");
     setData(wrapper);
+
+    expect(wrapper.vm.isDisabled).toBe(false);
+
+    const btnSubmit = wrapper.find("button");
     wrapper.vm.submit();
 
-    const data = wrapper.emitted("emit-notice")
+    const data = wrapper.emitted("emit-notice");
   
     expect(btnSubmit.classes()).toContain("btn-submit");
     expect(...data[0]).toEqual({

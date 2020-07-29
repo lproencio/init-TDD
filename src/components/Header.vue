@@ -4,14 +4,14 @@
     <div class="input">
       <div class="input-notice">
         <label for="">description:</label>
-        <input type="text" />
+        <input type="text" v-model="description"/>
       </div>
       <div class="input-notice">
         <label for="">relevance:</label>
-        <input type="text" />
+        <input type="number" v-model="relevance" />
       </div>
     </div>
-    <button class="btn-submit" @click="submit">submit</button>
+    <button class="btn-submit" :class="{ disabled: isDisabled }" :disabled="isDisabled" @click="submit">submit</button>
   </div>
 </template>
 
@@ -20,9 +20,18 @@ export default {
   name: "Header",
   data() {
     return {
-      id: Number,
-      description: String,
-      relevance: Number
+      id: 1,
+      description: "",
+      relevance: null
+    }
+  },
+  computed: {
+    isDisabled() {
+      if(!this.description || !this.relevance){
+        return true;
+      } else {
+        return false;
+      }
     }
   },
   methods: {
