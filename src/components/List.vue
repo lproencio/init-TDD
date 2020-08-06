@@ -1,7 +1,7 @@
 <template>
   <div class="list">
     <h1>This is an about page</h1>
-    <p>{{ noticeList }}</p>
+    <p>{{ arrList }}</p>
   </div>
 </template>
 
@@ -10,9 +10,15 @@ export default {
   props: {
     noticeList: Object
   },
+  data() {
+    return {
+      arrList: [],
+      newNotices: this.noticeList
+    }
+  },
   watch: {
    noticeList() {
-     console.log(this.noticeList);
+     this.arrList.push(this.newNotices);
    } 
   }
 }
