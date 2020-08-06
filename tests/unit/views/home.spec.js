@@ -19,7 +19,7 @@ describe("Home", () => {
 
   it("exist data", () => {
     const { notice } = wrapper.vm.$data;
-    expect(notice).toBe(Array);
+    expect(notice).toBe(Object);
   });
 
   it("transmit data", async () => {
@@ -31,7 +31,6 @@ describe("Home", () => {
 
     wrapper.findComponent(Header).vm.$emit("emit-notice", data);
     const { notice } = wrapper.vm.$data;
-    
     expect(notice).toEqual({
       id: 1,
       description: "You are the beast",

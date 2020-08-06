@@ -16,7 +16,7 @@ export default {
   },
   data() {
     return {
-      notice: Array,
+      notice: Object,
       showList: false
     }
   },
