@@ -11,7 +11,9 @@
         <input type="number" v-model="relevance" />
       </div>
     </div>
-    <button class="btn-submit" :class="{ disabled: isDisabled }" :disabled="isDisabled" @click="submit">submit</button>
+    <div class="btn-submit">
+      <button :class="{ disabled: isDisabled }" :disabled="isDisabled" @click="submit">submit</button>
+    </div>
   </div>
 </template>
 

@@ -6,10 +6,8 @@
   }
   
   .input {
-    @apply flex justify-between;
-
     .input-notice {
-      @apply w-full pr-10;
+      @apply w-full mt-4;
 
       label {
         @apply text-white text-lg mr-4;
@@ -22,6 +20,25 @@
   }
 
   .btn-submit {
-    @apply bg-blue-500 w-24 h-10 text-white font-bold mt-5 rounded outline-none;
+    @apply flex justify-end mt-5;
+
+    button {
+      @apply bg-blue-500 w-24 h-10 text-white font-bold mt-5 rounded outline-none;
+    }
+
+    .disabled {
+      @apply bg-gray-500 cursor-not-allowed;
+    }
   }
+
+  @media (min-width: 768px) {
+    .input {
+      @apply flex justify-between;
+
+      .input-notice {
+        @apply pr-10;
+      }
+    }
+  }
+
 }
