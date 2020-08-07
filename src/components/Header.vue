@@ -45,14 +45,6 @@ export default {
       }
       this.$emit("emit-notice", notice);
     }
-  },
-  mounted() {
-    const initNotice = {
-      id: 1,
-      description: "You are the beast",
-      relevance: 3
-    }
-    this.$emit("emit-notice", initNotice);
   }
 };
 </script>

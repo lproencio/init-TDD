@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <Header @emit-notice="transmitNotice" />
-    <List :noticeList="notice" v-if="showList"/>
+    <List :noticeList="notice" />
   </div>
 </template>
 
