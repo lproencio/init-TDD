@@ -5,39 +5,44 @@
     @apply mb-5 font-bold;
   }
 
-  .all-notice {
-    @apply bg-blue-100 p-5 text-center;
+  .body {
+    @apply w-full overflow-scroll;
+    height: 400px;
 
-    .notice {
-      @apply flex justify-between border-b-2 pb-3 border-black;
-      div {
-        h2 {
-          @apply font-bold;
-        }
+    .all-notice {
+      @apply bg-blue-100 p-5 text-center;
 
-        p {
-          @apply mt-5;
-        }
-
-        button {
-          @apply mt-5 outline-none;
-        }
-
-        .delete {
-          @apply mt-4;
-          svg {
-            transform: scale(0.9);
+      .notice {
+        @apply flex justify-between border-b-2 pb-3 border-black;
+        div {
+          h2 {
+            @apply font-bold;
           }
 
-          svg * {
-            fill: red;
+          p {
+            @apply mt-5;
+          }
+
+          button {
+            @apply mt-5 outline-none;
+          }
+
+          .delete {
+            @apply mt-4;
+            svg {
+              transform: scale(0.9);
+            }
+
+            svg * {
+              fill: red;
+            }
           }
         }
-      }
 
-      .description {
-        p {
-          @apply truncate w-20;
+        .description {
+          p {
+            @apply truncate w-20;
+          }
         }
       }
     }
