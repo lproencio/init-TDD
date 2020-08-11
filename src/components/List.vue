@@ -44,22 +44,7 @@
     },
     data() {
       return {
-        arrList: [
-          { id: 1, description: "test", relevance: "1" },
-          {
-            id: 2,
-            description: "test 2 test 2 test 2 test 2 test 2 test 2",
-            relevance: "3",
-          },
-          { id: 3, description: "test 3", relevance: "5" },
-          { id: 1, description: "test", relevance: "1" },
-          {
-            id: 2,
-            description: "test 2 test 2 test 2 test 2 test 2 test 2",
-            relevance: "3",
-          },
-          { id: 3, description: "test 3", relevance: "5" },
-        ],
+        arrList: [],
         newNotices: this.noticeList,
       };
     },
