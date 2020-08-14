@@ -4,7 +4,3 @@ describe("My First Test", () => {
     cy.contains(".header h1", "header");
   });
 });
-
-
-
-

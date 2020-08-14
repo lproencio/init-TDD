@@ -2,7 +2,7 @@
   <div class="list">
     <h1>Notice List</h1>
     <div class="body">
-      <div class="all-notice" v-for="(item, i) in arrList" :key="i">
+      <div data-cy="all-notice" class="all-notice" v-for="(item, i) in arrList" :key="i">
         <div class="notice">
           <div>
             <h2>{{ Object.keys(item)[0] }}</h2>
@@ -37,10 +37,10 @@
   export default {
     components: {
       Close,
-      Pencil,
+      Pencil
     },
     props: {
-      noticeList: Object,
+      noticeList: Object
     },
     data() {
       return {
@@ -50,7 +50,7 @@
     },
     watch: {
       noticeList() {
-        this.arrList.push(this.newNotices);
+        this.arrList.push(this.noticeList);
       },
     },
   };
